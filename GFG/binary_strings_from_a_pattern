@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void getstrings(string s,int index)
+{
+    if(index==s.size())
+    {
+        cout<<s<<endl;
+        return;
+    }
+    if(s[index]=='?')
+    {
+        s[index]='0';
+        getstrings(s,index+1);
+
+        s[index]='1';
+        getstrings(s,index+1);
+    }
+    else
+        getstrings(s,index+1);
+}
+
+int main()
+{
+    string str = "1?0";
+    getstrings(str,0);
+    return 0;
+}
